@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import { nanoid } from 'nanoid';
 import { useId } from 'react';
+import { addContact } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string().trim().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
@@ -12,7 +14,8 @@ const FeedbackSchema = Yup.object().shape({
 });
 
 
-const ContactForm = ({ onAdd }) => {
+const ContactForm = () => {
+  const dispatch = useDispatch();
   const nameFieldId = useId();
   const numberFieldId = useId();
 
@@ -23,7 +26,7 @@ const ContactForm = ({ onAdd }) => {
       number: values.number.trim(),
       ...values,
     }
-    onAdd(nextContact);
+    dispatch(addContact(nextContact));
 		actions.resetForm();
 	};
 
