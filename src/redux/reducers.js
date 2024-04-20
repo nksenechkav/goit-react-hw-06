@@ -33,3 +33,21 @@ export const contactsReducer = (state = initialContacts, action) => {
             return state;
         }
 }
+
+const InitialFilters =  {
+    filters: {
+        name: ""
+    }
+}
+  
+export const filtersReducer = (state = InitialFilters, action) => {
+    switch (action.type) {
+      case 'filters/setFilter':
+        return {
+          ...state,
+          name: action.payload,
+        };
+      default:
+        return state;
+    }
+  };

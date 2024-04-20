@@ -12,3 +12,9 @@ export const addContact = (newContact) => {
     };
   };
   
+  export const setFilter = (value) => {
+    return {
+      type: 'filters/setFilter',
+      payload: value,
+    };
+  };
