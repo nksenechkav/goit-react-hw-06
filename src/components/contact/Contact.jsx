@@ -4,10 +4,10 @@ import { ImUser } from "react-icons/im";
 import { deleteContact } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 
-const Contact = (contact ) => {
+const Contact = (contact) => {
   const dispatch = useDispatch();
 
-  const onDelete = () => dispatch(deleteContact(contact));
+  const onDelete = () => dispatch(deleteContact(contact.id));
 
   return (
     <div className={css.item}>
