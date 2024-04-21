@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import { nanoid } from 'nanoid';
 import { useId } from 'react';
-import { addContact } from '../../redux/actions';
+import { addContact } from '../../redux/contactsSlice';
 import { useDispatch } from 'react-redux';
 
 const FeedbackSchema = Yup.object().shape({
