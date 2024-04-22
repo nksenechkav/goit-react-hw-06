@@ -6,7 +6,7 @@ import { selectNameFilter } from '../../redux/filtersSlice';
 const SearchBox = () => {
   const dispatch = useDispatch();
 
-  const filter = useSelector(selectNameFilter || '');
+  const filter = useSelector(selectNameFilter);
  
   const handleChange = (e) => {
     const newValue = e.target.value;
