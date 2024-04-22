@@ -7,16 +7,18 @@ const InitialFilters = {
   }
 
 const filtersSlice = createSlice({
-  name: "contacts/items",
+  name: "filters/name",
   initialState: InitialFilters,
   reducers: {
-      setFilter: (state, action) => {
+    changeFilter: (state, action) => {
         state.filters.name = action.payload;
     },
   },
 });
 
 
-// Експортуємо генератори екшенів та редюсер
-export const { setFilter } = filtersSlice.actions;
+export const { changeFilter } = filtersSlice.actions;
+
 export const filtersReducer = filtersSlice.reducer;
+
+export const selectNameFilter = (state) => state.filters.filters.name;
