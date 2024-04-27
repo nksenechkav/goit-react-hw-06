@@ -21,11 +21,12 @@ const ContactForm = () => {
 
   const handleSubmit = (values, actions) => {
     const nextContact = {
+      ...values,
       id: nanoid(),
       name: values.name.trim(),
-      number: values.number.trim(),
-      ...values,
+      number: values.number.trim(), 
     }
+    
     dispatch(addContact(nextContact));
 		actions.resetForm();
 	};
